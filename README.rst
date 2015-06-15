@@ -3,7 +3,7 @@ RedisLog - A Redis Pub/Sub/List Logging Handler for Python
 =====================================================
 
 A logging handler for Python that publishes log messages using redis's 
-pub/sub system.  You can use this to read or respond to streaming log
+pub/sub/list system.  You can use this to read or respond to streaming log
 data in real time.
 
 Installation
