@@ -64,7 +64,7 @@ class RedisListHandler(logging.Handler):
     """
 
     @classmethod
-    def to(cklass, key, max_messages=None, host=None, port=None, db=None level=logging.NOTSET):
+    def to(cklass, key, max_messages=None, host=None, port=None, db=None, level=logging.NOTSET):
         return cklass(key, max_messages, redis.Redis(host=host or 'localhost', port=port or 6379, db=db or 0), level=level)
 
     def __init__(self, key, max_messages, redis_client, level=logging.NOTSET):
