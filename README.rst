@@ -1,5 +1,5 @@
 =====================================================
-RedisLog - A Redis Pub/Sub Logging Handler for Python
+RedisLog - A Redis Pub/Sub/List Logging Handler for Python
 =====================================================
 
 A logging handler for Python that publishes log messages using redis's 
