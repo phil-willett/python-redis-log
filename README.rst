@@ -87,7 +87,7 @@ The date is stored as an ISO 8601 string in GMT.
 You can use the ``redis-cli`` shell that comes with ``redis`` to test this.  At
 the shell prompt, type ``subscribe my:channel`` (replacing with the channel
 name you choose, of course).  You will see subsequent log data printed in the
-shell.
+shell. If you are logging to a list also (which you really should) than you can type ``lrange MyKey 0 -1`` (replacing the key with the key name you chose when pushing data to the list).
 
 Serving Suggestion
 ------------------
