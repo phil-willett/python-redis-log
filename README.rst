@@ -19,10 +19,10 @@ or ::
 
 The latest from github_ ::
 
-    git clone git://github.com/jedp/python-redis-log.git
+    git clone git://github.com/phil-willett/python-redis-log.git
     cd python-redis-log
     python setup.py build
-    python setup.py install --prefix=$HOME  # for example
+    python setup.py install
 
 .. _github: https://github.com/jedp/python-redis-log
     
