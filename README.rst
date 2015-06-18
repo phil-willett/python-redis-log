@@ -9,14 +9,6 @@ data in real time.
 Installation
 ------------
 
-The current stable release ::
-
-    pip install python-redis-log
-
-or ::
-
-    easy_install python-redis-log
-
 The latest from github_ ::
 
     git clone git://github.com/phil-willett/python-redis-log.git
@@ -24,7 +16,7 @@ The latest from github_ ::
     python setup.py build
     python setup.py install
 
-.. _github: https://github.com/jedp/python-redis-log
+.. _github: https://github.com/phil-willett/python-redis-log
     
 Dependencies
 ------------
