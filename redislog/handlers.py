@@ -64,10 +64,10 @@ class RedisListHandler(logging.Handler):
     """
 
     @classmethod
-    def to(cklass, key, max_messages=None, host=None, port=None, db=None, level=logging.NOTSET):
-        return cklass(key, max_messages, redis.Redis(host=host or 'localhost', port=port or 6379, db=db or 0), level=level)
+    def to(cklass, key, max_messages=None, host=None, port=None, db=None, duration=None, level=logging.NOTSET):
+        return cklass(key, max_messages, redis.Redis(host=host or 'localhost', port=port or 6379, db=db or 0), duration=duration or 0, level=level)
 
-    def __init__(self, key, max_messages, redis_client, level=logging.NOTSET):
+    def __init__(self, key, max_messages, redis_client, duration, level=logging.NOTSET):
         """
         Create a new logger for the given key and redis_client.
         """
@@ -76,6 +76,7 @@ class RedisListHandler(logging.Handler):
         self.redis_client = redis_client
         self.formatter = RedisFormatter()
         self.max_messages = max_messages
+        self.duration = duration
 
     def emit(self, record):
         """
