@@ -1,6 +1,6 @@
 import logging
 import redis
-import json
+import simplejson as json
 
 
 class RedisFormatter(logging.Formatter):
