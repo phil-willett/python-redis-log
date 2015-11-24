@@ -51,7 +51,7 @@ def _getCallingContext():
 
 
 class RedisLogRecord(logging.LogRecord):
-    def __init__(self, name, lvl, fn, lno, msg, args, exc_info, func=None, extra=None):
+    def __init__(self, name, lvl, msg, exc_info, extra=None):
         logging.LogRecord.__init__(self, name, lvl, msg, exc_info)
 
         # You can also access the following instance variables via the
@@ -79,7 +79,7 @@ class RedisLogRecord(logging.LogRecord):
         }
 
 class RedisLogger(logging.getLoggerClass()):
-    def makeRecord(self, name, lvl, fn, lno, msg, args, exc_info, func=None, extra=None):
+    def makeRecord(self, name, lvl, msg, exc_info, extra=None):
         record = RedisLogRecord(name, lvl, msg, exc_info)
 
         if extra:
