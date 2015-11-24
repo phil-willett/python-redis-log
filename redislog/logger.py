@@ -77,8 +77,6 @@ class RedisLogRecord(logging.LogRecord):
             'hostname': self.hostname,
             'traceback': exc_info
         }
-        
-        print(self._raw)
 
 class RedisLogger(logging.getLoggerClass()):
     def makeRecord(self, name, lvl, fn, lno, msg, args, exc_info, func=None, extra=None):
