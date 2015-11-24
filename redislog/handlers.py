@@ -19,9 +19,7 @@ class RedisFormatter(logging.Formatter):
         if data.get('traceback'):
             data['traceback'] = self.formatException(data['traceback'])
             
-        data = json.loads(data)
-
-        return json.dumps(data)
+        return json.dump(data)
 
 class RedisHandler(logging.Handler):
     """
