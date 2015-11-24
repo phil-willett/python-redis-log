@@ -70,7 +70,7 @@ class RedisLogRecord(logging.LogRecord):
             'filename': fn,
             'line_no': self.lineno,
             'msg': msg,
-            'args': args,
+            'args': list(args),
             'time': datetime.datetime.utcnow(),
             'username': self.username,
             'funcname': self.funcname,
