@@ -49,10 +49,9 @@ def _getCallingContext():
 
     return modname, funcname, lineno
 
-
 class RedisLogRecord(logging.LogRecord):
-    def __init__(self, name, lvl, msg, exc_info, extra=None):
-        logging.LogRecord.__init__(self, name, lvl, msg, exc_info)
+    def __init__(self, name, lvl, fn, lno, msg, args=None, exc_info, func=None, extra=None):
+        logging.LogRecord.__init__(self, name, lvl, fn, lno, msg, args, exc_info, func)
 
         # You can also access the following instance variables via the
         # formatter as
@@ -67,14 +66,20 @@ class RedisLogRecord(logging.LogRecord):
         self._raw = {
             'name': name,
             'level': levelAsString(lvl),
+            'filename': fn,
+            'line_no': self.lineno,
             'msg': str(msg),
+            'args': list(args),
             'time': datetime.datetime.utcnow(),
+            'username': self.username,
+            'funcname': self.funcname,
+            'hostname': self.hostname,
             'traceback': exc_info
         }
 
 class RedisLogger(logging.getLoggerClass()):
-    def makeRecord(self, name, lvl, msg, exc_info, extra=None):
-        record = RedisLogRecord(name, lvl, msg, exc_info)
+    def makeRecord(self, name, lvl, fn, lno, msg, args=None, exc_info, func=None, extra=None):
+        record = RedisLogRecord(name, lvl, fn, lno, msg, args=None, exc_info, func=None)
 
         if extra:
             for key in extra:
