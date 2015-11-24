@@ -11,7 +11,6 @@ class RedisFormatter(logging.Formatter):
         Convert date to iso format, and stringify any exceptions.
         """
         data = record._raw.copy()
-        print(data)
 
         # serialize the datetime date as utc string
         data['time'] = data['time'].isoformat()
@@ -20,7 +19,8 @@ class RedisFormatter(logging.Formatter):
         if data.get('traceback'):
             data['traceback'] = self.formatException(data['traceback'])
         
-        print(data)    
+        print(data)
+        print(json.dumps(data))
         return json.dumps(data)
 
 class RedisHandler(logging.Handler):
