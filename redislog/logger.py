@@ -80,7 +80,7 @@ class RedisLogRecord(logging.LogRecord):
 
 class RedisLogger(logging.getLoggerClass()):
     def makeRecord(self, name, lvl, fn, lno, msg, args, exc_info, func=None, extra=None):
-        record = RedisLogRecord(name, lvl, fn, lno, msg, args, exc_info, func=None)
+        record = RedisLogRecord(name, lvl, msg, exc_info)
 
         if extra:
             for key in extra:
