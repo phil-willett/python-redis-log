@@ -23,7 +23,7 @@ class RedisFormatter(logging.Formatter):
         allow_nan=True, cls=None, indent=None, separators=None, encoding='utf-8',
         default=str, use_decimal=True, namedtuple_as_object=True, tuple_as_array=True,
         bigint_as_string=False, sort_keys=False, item_sort_key=None, for_json=None,
-        ignore_nan=False, int_as_string_bitcount=None, iterable_as_array=False)
+        ignore_nan=True)
 
 class RedisHandler(logging.Handler):
     """
