@@ -65,17 +65,17 @@ class RedisLogRecord(logging.LogRecord):
         self.modname, self.funcname, self.lineno = _getCallingContext()
 
         self._raw = {
-            'name': name,
-            'level': levelAsString(lvl),
-            'filename': fn,
-            'line_no': self.lineno,
-            'msg': str(msg),
-            'args': list(args),
-            'time': datetime.datetime.utcnow(),
-            'username': self.username,
-            'funcname': self.funcname,
-            'hostname': self.hostname,
-            'traceback': exc_info
+            "name": name,
+            "level": levelAsString(lvl),
+            "filename": fn,
+            "line_no": self.lineno,
+            "msg": list(msg),
+            "args": list(args),
+            "time": datetime.datetime.utcnow(),
+            "username": self.username,
+            "funcname": self.funcname,
+            "hostname": self.hostname,
+            "traceback": exc_info
         }
 
 class RedisLogger(logging.getLoggerClass()):
