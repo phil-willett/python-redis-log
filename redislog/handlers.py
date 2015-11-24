@@ -21,9 +21,7 @@ class RedisFormatter(logging.Formatter):
 
         return json.dumps(data, skipkeys=False, ensure_ascii=True, 
             check_circular=True, allow_nan=True, cls=None,
-            indent=None, separators=return json.dumps(data, skipkeys=False, ensure_ascii=True, 
-            check_circular=True, allow_nan=True, cls=None, for_json=True,
-            default=str)
+            indent=None, separators=None, for_json=True, default=str)
 
 class RedisHandler(logging.Handler):
     """
