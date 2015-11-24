@@ -67,14 +67,8 @@ class RedisLogRecord(logging.LogRecord):
         self._raw = {
             'name': name,
             'level': levelAsString(lvl),
-            'filename': fn,
-            'line_no': self.lineno,
             'msg': str(msg),
-            'args': list(args),
             'time': datetime.datetime.utcnow(),
-            'username': self.username,
-            'funcname': self.funcname,
-            'hostname': self.hostname,
             'traceback': exc_info
         }
 
