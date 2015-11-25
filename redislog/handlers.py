@@ -21,7 +21,7 @@ class RedisFormatter(logging.Formatter):
         
         print(data)
         print(json.dumps(data))
-        return json.dumps(data)
+        return data
 
 class RedisHandler(logging.Handler):
     """
