@@ -12,8 +12,8 @@ Redis clients subscribed to my:channel will get a json log record.
 On errors, if exc_info is True, a printed traceback will be included.
 """
 
-__author__ = 'Jed Parsons <jed@jedparsons.com>'
-__version__ = (0, 0, 1)
+__author__ = 'Phil Willett <24_Seven@yahoo.com>'
+__version__ = (0, 0, 2)
 
 import logging
 import logger
